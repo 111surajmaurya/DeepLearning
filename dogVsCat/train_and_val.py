@@ -1,28 +1,3 @@
-#By @Kevin Xu
-#kevin28520@gmail.com
-#Youtube: https://www.youtube.com/channel/UCVCSn4qQXTDAtGWpWAe4Plw
-#
-#The aim of this project is to use TensorFlow to process our own data.
-#    - input_data.py:  read in data and generate batches
-#    - model: build the model architecture
-#    - training: train
-
-# I used Ubuntu with Python 3.5, TensorFlow 1.0*, other OS should also be good.
-# With current settings, 10000 traing steps needed 50 minutes on my laptop.
-
-# data: cats vs. dogs from Kaggle
-# Download link: https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data
-# data size: ~540M
-
-# How to run?
-# 1. run the training.py once
-# 2. call the run_training() in the console to train the model.
-
-# Note: 
-# it is suggested to restart your kenel to train the model multiple times 
-#(in order to clear all the variables in the memory)
-# Otherwise errors may occur: conv1/weights/biases already exist......
-
 
 #%%
 
@@ -48,9 +23,9 @@ learning_rate = 0.0001 # with current parameters, it is suggested to use learnin
 def run_training():
     
     # you need to change the directories to yours.
-    train_dir = '/home/kevin/tensorflow/cats_vs_dogs/data/train/'
-    logs_train_dir = '/home/kevin/tensorflow/cats_vs_dogs/logs/train/'
-    logs_val_dir = '/home/kevin/tensorflow/cats_vs_dogs/logs/val/'
+    train_dir = '/train/'
+    logs_train_dir = '/train/'
+    logs_val_dir = '/train'
     
     train, train_label, val, val_label = input_train_val_split.get_files(train_dir, RATIO)
     train_batch, train_label_batch = input_train_val_split.get_batch(train,
